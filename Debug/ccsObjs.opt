@@ -1,0 +1,1 @@
+"./camera.obj" "./filter.obj" "./main.obj" "./mavlink.obj" "./ppm.obj" "./receive.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartstdio.obj" "./ultrasonic.obj" "../tm4c123gh6pm.cmd" -llibc.a -l"F:/TIVAWARE002/driverlib/ccs/Debug/driverlib.lib" 
