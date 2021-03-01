@@ -1,0 +1,694 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.0                     
+******************************************************************************
+>> Linked Fri Jan 25 17:33:05 2019
+
+OUTPUT FILE NAME:   <Aircraft_v6.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000037f5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0000414e  0003beb2  R  X
+  SRAM                  20000000   00008000  00000a18  000075e8  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00004150   00004150    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00003b7a   00003b7a    r-x .text
+  00003de8    00003de8    00000308   00000308    r-- .const
+  000040f0    000040f0    00000060   00000060    r-- .cinit
+20000000    20000000    00000a1c   00000000    rw-
+  20000000    20000000    0000026c   00000000    rw- .vtable
+  20000270    20000270    0000050c   00000000    rw- .bss
+  2000077c    2000077c    00000200   00000000    rw- .stack
+  2000097c    2000097c    000000a0   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00003b7a     
+                  0000026c    00000cc0     main.obj (.text)
+                  00000f2c    000009ac     rtsv7M4_T_le_v4SPD16_eabi.lib : e_pow.obj (.text)
+                  000018d8    000004dc     uartstdio.obj (.text)
+                  00001db4    00000420     mavlink.obj (.text)
+                  000021d4    000003a0     ppm.obj (.text)
+                  00002574    00000268     filter.obj (.text)
+                  000027dc    000001dc     ultrasonic.obj (.text)
+                  000029b8    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  00002b6e    00000002                                   : i_div0.obj (.text)
+                  00002b70    00000170     receive.obj (.text)
+                  00002ce0    00000170     rtsv7M4_T_le_v4SPD16_eabi.lib : e_sqrt.obj (.text)
+                  00002e50    00000136                                   : fd_div_t2.obj (.text)
+                  00002f86    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  000030b8    00000110                   : sysctl.obj (.text:SysCtlClockGet)
+                  000031c8    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  000032c4    000000fc                                   : s_scalbn.obj (.text)
+                  000033c0    0000009c                                   : memcpy_t2.obj (.text)
+                  0000345c    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdcmple)
+                  000034e2    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdrcmple)
+                  00003568    0000007a                                   : memset_t2.obj (.text)
+                  000035e2    00000002                                   : mpu_init.obj (.text)
+                  000035e4    00000070                                   : autoinit.obj (.text)
+                  00003654    0000006e                                   : fd_tos_t2.obj (.text)
+                  000036c2    00000002                                   : startup.obj (.text)
+                  000036c4    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  0000372c    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00003794    00000060     driverlib.lib : timer.obj (.text:TimerConfigure)
+                  000037f4    00000054     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00003848    00000054                                   : exit.obj (.text)
+                  0000389c    0000004c     driverlib.lib : timer.obj (.text:_TimerIntNumberGet)
+                  000038e8    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00003934    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  0000397c    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.obj (.text)
+                  000039c4    00000046     driverlib.lib : uart.obj (.text:UARTConfigSetExpClk)
+                  00003a0a    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tou_t2.obj (.text)
+                  00003a4e    00000040                                   : u_divt2.obj (.text)
+                  00003a8e    00000002     --HOLE-- [fill = 0]
+                  00003a90    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
+                  00003ac8    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.obj (.text)
+                  00003b00    00000034     driverlib.lib : interrupt.obj (.text:IntRegister)
+                  00003b34    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00003b68    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.obj (.text)
+                  00003b96    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00003bc0    00000024                   : interrupt.obj (.text:IntPrioritySet)
+                  00003be4    00000020                   : uart.obj (.text:UARTDisable)
+                  00003c04    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.obj (.text)
+                  00003c24    00000018     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  00003c3c    00000018                   : timer.obj (.text:TimerIntRegister)
+                  00003c54    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00003c6c    00000016     driverlib.lib : timer.obj (.text:TimerControlEvent)
+                  00003c82    00000014                   : uart.obj (.text:UARTEnable)
+                  00003c96    00000002     --HOLE-- [fill = 0]
+                  00003c98    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00003cac    00000014                                   : s_copysign.obj (.text)
+                  00003cc0    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  00003cd2    00000012                   : gpio.obj (.text:GPIOPinTypeTimer)
+                  00003ce4    00000012                   : gpio.obj (.text:GPIOPinTypeUART)
+                  00003cf6    00000002     --HOLE-- [fill = 0]
+                  00003cf8    00000010                   : fpu.obj (.text:FPUEnable)
+                  00003d08    00000010                   : fpu.obj (.text:FPULazyStackingEnable)
+                  00003d18    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  00003d28    0000000e                   : timer.obj (.text:TimerEnable)
+                  00003d36    0000000e                   : uart.obj (.text:UARTCharGetNonBlocking)
+                  00003d44    0000000e                   : uart.obj (.text:UARTCharsAvail)
+                  00003d52    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00003d60    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  00003d6c    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00003d78    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00003d84    0000000a     driverlib.lib : timer.obj (.text:TimerIntStatus)
+                  00003d8e    0000000a                   : timer.obj (.text:TimerValueGet)
+                  00003d98    0000000a                   : uart.obj (.text:UARTFIFOEnable)
+                  00003da2    0000000a                   : uart.obj (.text:UARTIntStatus)
+                  00003dac    00000008                   : timer.obj (.text:TimerIntEnable)
+                  00003db4    00000008                   : uart.obj (.text:UARTIntEnable)
+                  00003dbc    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  00003dc2    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  00003dc8    00000006                   : timer.obj (.text:TimerClockSourceSet)
+                  00003dce    00000006                   : uart.obj (.text:UARTClockSourceSet)
+                  00003dd4    00000006                   : uart.obj (.text:UARTFIFOLevelSet)
+                  00003dda    00000004                   : timer.obj (.text:TimerIntClear)
+                  00003dde    00000004                   : uart.obj (.text:UARTIntClear)
+                  00003de2    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+
+.const     0    00003de8    00000308     
+                  00003de8    0000009c     driverlib.lib : interrupt.obj (.const:g_pui32Regs)
+                  00003e84    00000090                   : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00003f14    00000070                   : interrupt.obj (.const)
+                  00003f84    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00003ff0    00000060                   : timer.obj (.const:g_ppui32TimerIntMap)
+                  00004050    00000040                   : timer.obj (.const:g_ppui32TimerIntMapSnowflake)
+                  00004090    00000030     rtsv7M4_T_le_v4SPD16_eabi.lib : e_pow.obj (.const:$O1$$)
+                  000040c0    00000012     uartstdio.obj (.const:.string)
+                  000040d2    00000002     --HOLE-- [fill = 0]
+                  000040d4    0000000c     uartstdio.obj (.const:g_ui32UARTBase)
+                  000040e0    0000000c     uartstdio.obj (.const:g_ui32UARTPeriph)
+                  000040ec    00000004     uartstdio.obj (.const)
+
+.cinit     0    000040f0    00000060     
+                  000040f0    00000025     (.cinit..data.load) [load image, compression = lzss]
+                  00004115    00000003     --HOLE-- [fill = 0]
+                  00004118    0000000c     (__TI_handler_table)
+                  00004124    00000004     --HOLE-- [fill = 0]
+                  00004128    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004130    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00004138    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.vtable    0    20000000    0000026c     UNINITIALIZED
+                  20000000    0000026c     driverlib.lib : interrupt.obj (.vtable)
+
+.bss       0    20000270    0000050c     UNINITIALIZED
+                  20000270    00000330     (.common:altitude_ma)
+                  200005a0    00000070     (.common:position_controler)
+                  20000610    00000034     (.common:UART1_Rx_Buffers)
+                  20000644    00000034     (.common:UART1_Rx_Data)
+                  20000678    00000030     (.common:Source_attitude_payload)
+                  200006a8    0000002c     (.common:altitude_controler)
+                  200006d4    00000004     (.common:int_mavlink_height)
+                  200006d8    00000028     (.common:altitude_ewa)
+                  20000700    00000024     ppm.obj (.bss:ppm_data_buf)
+                  20000724    00000012     ppm.obj (.bss:ppm_data_shadow)
+                  20000736    00000012     (.common:ppm_data)
+                  20000748    0000000c     ppm.obj (.bss)
+                  20000754    00000008     (.common:Source_Rangefinder_payload)
+                  2000075c    00000004     (.common:int_pitch)
+                  20000760    00000004     (.common:int_roll)
+                  20000764    00000004     (.common:int_yaw)
+                  20000768    00000004     (.common:mavlink_height)
+                  2000076c    00000004     (.common:pitch)
+                  20000770    00000004     (.common:roll)
+                  20000774    00000004     (.common:yaw)
+                  20000778    00000001     (.common:UART1_Rx_Len)
+                  20000779    00000001     (.common:UART1_Sender_Address)
+                  2000077a    00000001     (.common:payload_buf_index)
+                  2000077b    00000001     (.common:rx_buffer)
+
+.stack     0    2000077c    00000200     UNINITIALIZED
+                  2000077c    00000200     --HOLE--
+
+.data      0    2000097c    000000a0     UNINITIALIZED
+                  2000097c    00000028     mavlink.obj (.data:Rx_Buffer_attitude)
+                  200009a4    00000014     mavlink.obj (.data:Rx_Buffer_height)
+                  200009b8    00000014     ultrasonic.obj (.data)
+                  200009cc    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  200009d8    0000000c     main.obj (.data)
+                  200009e4    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data:$O1$$)
+                  200009ec    00000008     receive.obj (.data)
+                  200009f4    00000008     ultrasonic.obj (.data:ui32Time$2)
+                  200009fc    00000006     mavlink.obj (.data)
+                  20000a02    00000002     --HOLE--
+                  20000a04    00000005     ppm.obj (.data)
+                  20000a09    00000003     --HOLE--
+                  20000a0c    00000005     uartstdio.obj (.data)
+                  20000a11    00000003     --HOLE--
+                  20000a14    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.obj (.data)
+                  20000a18    00000004                                   : stkdepth_vars.obj (.data)
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    .\
+       main.obj                       3264    0         1042   
+       uartstdio.obj                  1244    46        5      
+       mavlink.obj                    1056    0         156    
+       ppm.obj                        928     0         71     
+       tm4c123gh6pm_startup_ccs.obj   12      620       0      
+       filter.obj                     616     0         0      
+       ultrasonic.obj                 476     0         28     
+       receive.obj                    368     0         114    
+    +--+------------------------------+-------+---------+---------+
+       Total:                         7964    666       1416   
+                                                               
+    D:\ti\ccsv7\tools\compiler\ti-cgt-arm_16.9.0.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       e_pow.obj                      2476    48        0      
+       fd_add_t2.obj                  438     0         0      
+       e_sqrt.obj                     368     0         0      
+       fd_div_t2.obj                  310     0         0      
+       fd_cmp_t2.obj                  268     0         0      
+       fd_mul_t2.obj                  252     0         0      
+       s_scalbn.obj                   252     0         0      
+       memcpy_t2.obj                  156     0         0      
+       memset_t2.obj                  122     0         0      
+       autoinit.obj                   112     0         0      
+       fd_tos_t2.obj                  110     0         0      
+       copy_decompress_lzss.obj       104     0         0      
+       exit.obj                       84      0         12     
+       boot.obj                       84      0         0      
+       cpy_tbl.obj                    76      0         0      
+       fd_toi_t2.obj                  72      0         0      
+       fd_tou_t2.obj                  68      0         0      
+       u_divt2.obj                    64      0         0      
+       fs_tod_t2.obj                  56      0         0      
+       i_tofd_t2.obj                  46      0         0      
+       u_tofd_t2.obj                  32      0         0      
+       _lock.obj                      20      0         8      
+       args_main.obj                  24      0         0      
+       s_copysign.obj                 20      0         0      
+       copy_decompress_none.obj       14      0         0      
+       copy_zero_init.obj             12      0         0      
+       errno.obj                      0       0         4      
+       pre_init.obj                   4       0         0      
+       stkdepth_vars.obj              0       0         4      
+       i_div0.obj                     2       0         0      
+       mpu_init.obj                   2       0         0      
+       startup.obj                    2       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         5650    48        28     
+                                                               
+    F:/TIVAWARE002/driverlib/ccs/Debug/driverlib.lib
+       interrupt.obj                  208     268       620    
+       gpio.obj                       510     144       0      
+       sysctl.obj                     380     108       0      
+       timer.obj                      270     160       0      
+       uart.obj                       194     0         0      
+       fpu.obj                        32      0         0      
+       cpu.obj                        12      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1606    680       620    
+                                                               
+       Stack:                         0       0         512    
+       Linker Generated:              0       89        0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   15220   1483      2576   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00004138 records: 3, size/record: 8, table size: 24
+	.data: load addr=000040f0, load size=00000025 bytes, run addr=2000097c, run size=000000a0 bytes, compression=lzss
+	.bss: load addr=00004128, load size=00000008 bytes, run addr=20000270, run size=0000050c bytes, compression=zero_init
+	.vtable: load addr=00004130, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00004118 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+000005ed  AircraftDataReceive            
+000009b3  Aircraft_Base_Output           
+00000969  Aircraft_Unlock                
+0000026d  AltitudeControlerInit          
+000002cd  AltitudeGet                    
+000002eb  Altitude_Control               
+00001e15  Attitude_Data_Store            
+00001f87  Attitude_init                  
+00003849  C$$EXIT                        
+00003d61  CPUcpsie                       
+000007ed  ConfigureUART0                 
+00001f95  Distance_init                  
+000025c9  EWA_Filter_Compute             
+00002575  EWA_Filter_Init                
+00003cf9  FPUEnable                      
+00003d09  FPULazyStackingEnable          
+00003b97  GPIODirModeSet                 
+000027dd  GPIOE3_Init                    
+00002f87  GPIOPadConfigSet               
+00003935  GPIOPinConfigure               
+00003dbd  GPIOPinRead                    
+00003cc1  GPIOPinTypeGPIOInput           
+00003c25  GPIOPinTypeGPIOOutput          
+00003cd3  GPIOPinTypeTimer               
+00003ce5  GPIOPinTypeUART                
+00003dc3  GPIOPinWrite                   
+000036c5  IntEnable                      
+00003d19  IntMasterEnable                
+00003bc1  IntPrioritySet                 
+00003b01  IntRegister                    
+000008a9  KEY_PF4_Pros                   
+0000087d  Key_PF4_Init                   
+0000084d  LED_Init                       
+000026f1  MA_Filter_Compute              
+0000269f  MA_Filter_Init                 
+00001fe5  MavLink_Data_Get               
+00001db5  Mav_recive_UART2_Config        
+00001fa3  Mavlink_DateInit               
+00000901  PPM_Channal_Init               
+000004e5  PositionControlerInit          
+000005a1  Position_Control               
+00002b71  Recive_UART1_Config            
+00003d79  ResetISR                       
+00000a29  RolloverProtection             
+2000097c  Rx_Buffer_attitude             
+200009a4  Rx_Buffer_height               
+UNDEFED   SHT$$INIT_ARRAY$$Base          
+UNDEFED   SHT$$INIT_ARRAY$$Limit         
+00002803  SonicTrig                      
+20000754  Source_Rangefinder_payload     
+20000678  Source_attitude_payload        
+000030b9  SysCtlClockGet                 
+00003b35  SysCtlPeripheralEnable         
+00003a91  SysCtlPeripheralReady          
+000022b1  Timer0AIntHandler              
+00000b3d  Timer1AIntHandler              
+00000aa9  Timer1A_Init                   
+00003dc9  TimerClockSourceSet            
+00003795  TimerConfigure                 
+00003c6d  TimerControlEvent              
+00003d29  TimerEnable                    
+00003ddb  TimerIntClear                  
+00003dad  TimerIntEnable                 
+00003c3d  TimerIntRegister               
+00003d85  TimerIntStatus                 
+00003d8f  TimerValueGet                  
+00002bb7  UART1IntHandler                
+00000bb5  UART1_Data_Pros                
+20000610  UART1_Rx_Buffers               
+20000644  UART1_Rx_Data                  
+20000778  UART1_Rx_Len                   
+20000779  UART1_Sender_Address           
+200009ec  UART1_Updated_Flag             
+00001e4b  UART2IntHandler                
+00003d37  UARTCharGetNonBlocking         
+00003d45  UARTCharsAvail                 
+00003dcf  UARTClockSourceSet             
+000039c5  UARTConfigSetExpClk            
+00003be5  UARTDisable                    
+00003c83  UARTEnable                     
+00003d99  UARTFIFOEnable                 
+00003dd5  UARTFIFOLevelSet               
+00003ddf  UARTIntClear                   
+00003db5  UARTIntEnable                  
+00003da3  UARTIntStatus                  
+000018d9  UARTStdioConfig                
+00001a51  UARTgetc                       
+0000198b  UARTgets                       
+00001d7f  UARTprintf                     
+00001a85  UARTvprintf                    
+00001939  UARTwrite                      
+00002951  UltrasonicConfigure            
+000028ef  WTimer0BConfigure              
+00002833  WTimer0BIntHandler             
+2000097c  __STACK_END                    
+00000200  __STACK_SIZE                   
+2000097c  __STACK_TOP                    
+00004138  __TI_CINIT_Base                
+00004150  __TI_CINIT_Limit               
+00004118  __TI_Handler_Table_Base        
+00004124  __TI_Handler_Table_Limit       
+000035e5  __TI_auto_init                 
+200009cc  __TI_cleanup_ptr               
+0000372d  __TI_decompress_lzss           
+00003d53  __TI_decompress_none           
+200009d0  __TI_dtors_ptr                 
+200009d4  __TI_enable_exit_profile_output
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+00000000  __TI_static_base__             
+00003d6d  __TI_zero_init                 
+0000345d  __aeabi_cdcmpeq                
+0000345d  __aeabi_cdcmple                
+000034e3  __aeabi_cdrcmple               
+00003655  __aeabi_d2f                    
+0000397d  __aeabi_d2iz                   
+00003a0b  __aeabi_d2uiz                  
+000029c3  __aeabi_dadd                   
+00002e51  __aeabi_ddiv                   
+000031c9  __aeabi_dmul                   
+000029b9  __aeabi_dsub                   
+00003ac9  __aeabi_f2d                    
+00003b69  __aeabi_i2d                    
+00002b6f  __aeabi_idiv0                  
+00003569  __aeabi_memclr                 
+00003569  __aeabi_memclr4                
+00003569  __aeabi_memclr8                
+000033c1  __aeabi_memcpy                 
+000033c1  __aeabi_memcpy4                
+000033c1  __aeabi_memcpy8                
+0000356b  __aeabi_memset                 
+0000356b  __aeabi_memset4                
+0000356b  __aeabi_memset8                
+00003c05  __aeabi_ui2d                   
+00003a4f  __aeabi_uidiv                  
+00003a4f  __aeabi_uidivmod               
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+000035e3  __mpu_init                     
+2000077c  __stack                        
+00003c55  _args_main                     
+000037f5  _c_int00                       
+200009e4  _lock                          
+00003ca7  _nop                           
+00003c9f  _register_lock                 
+00003c99  _register_unlock               
+000036c3  _system_post_cinit             
+00003de3  _system_pre_init               
+200009e8  _unlock                        
+0000384d  abort                          
+200009d8  aircraft_start_flag            
+200006a8  altitude_controler             
+200006d8  altitude_ewa                   
+20000270  altitude_ma                    
+200009b8  bDataReady                     
+ffffffff  binit                          
+000038e9  copy_in                        
+00003cad  copysign                       
+00003cad  copysignl                      
+20000a14  errno                          
+00003855  exit                           
+20000000  g_pfnRAMVectors                
+00000000  g_pfnVectors                   
+200006d4  int_mavlink_height             
+2000075c  int_pitch                      
+20000760  int_roll                       
+200009c4  int_ultrasonic_height          
+20000764  int_yaw                        
+000032c5  ldexp                          
+000032c5  ldexpl                         
+00000cb1  main                           
+20000a18  main_func_sp                   
+20000768  mavlink_height                 
+000033c1  memcpy                         
+00003571  memset                         
+200009fc  newAttiFlag                    
+200009fd  newHeightFlag                  
+2000077a  payload_buf_index              
+2000076c  pitch                          
+200005a0  position_controler             
+00000f2d  pow                            
+00000f2d  powl                           
+20000736  ppm_data                       
+000021d5  ppm_encoder_init               
+000022db  ppm_encoder_set_data           
+20000770  roll                           
+2000077b  rx_buffer                      
+000032c5  scalbn                         
+000032c5  scalbnl                        
+00002ce1  sqrt                           
+00002ce1  sqrtl                          
+200009fe  start_receive_attitude         
+200009ff  start_receive_height           
+200009bc  ui32Distance                   
+200009c0  ultrasonic_height              
+200009c8  ultrasonic_update_flag         
+20000774  yaw                            
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  __TI_static_base__             
+00000000  g_pfnVectors                   
+00000200  __STACK_SIZE                   
+0000026d  AltitudeControlerInit          
+000002cd  AltitudeGet                    
+000002eb  Altitude_Control               
+000004e5  PositionControlerInit          
+000005a1  Position_Control               
+000005ed  AircraftDataReceive            
+000007ed  ConfigureUART0                 
+0000084d  LED_Init                       
+0000087d  Key_PF4_Init                   
+000008a9  KEY_PF4_Pros                   
+00000901  PPM_Channal_Init               
+00000969  Aircraft_Unlock                
+000009b3  Aircraft_Base_Output           
+00000a29  RolloverProtection             
+00000aa9  Timer1A_Init                   
+00000b3d  Timer1AIntHandler              
+00000bb5  UART1_Data_Pros                
+00000cb1  main                           
+00000f2d  pow                            
+00000f2d  powl                           
+000018d9  UARTStdioConfig                
+00001939  UARTwrite                      
+0000198b  UARTgets                       
+00001a51  UARTgetc                       
+00001a85  UARTvprintf                    
+00001d7f  UARTprintf                     
+00001db5  Mav_recive_UART2_Config        
+00001e15  Attitude_Data_Store            
+00001e4b  UART2IntHandler                
+00001f87  Attitude_init                  
+00001f95  Distance_init                  
+00001fa3  Mavlink_DateInit               
+00001fe5  MavLink_Data_Get               
+000021d5  ppm_encoder_init               
+000022b1  Timer0AIntHandler              
+000022db  ppm_encoder_set_data           
+00002575  EWA_Filter_Init                
+000025c9  EWA_Filter_Compute             
+0000269f  MA_Filter_Init                 
+000026f1  MA_Filter_Compute              
+000027dd  GPIOE3_Init                    
+00002803  SonicTrig                      
+00002833  WTimer0BIntHandler             
+000028ef  WTimer0BConfigure              
+00002951  UltrasonicConfigure            
+000029b9  __aeabi_dsub                   
+000029c3  __aeabi_dadd                   
+00002b6f  __aeabi_idiv0                  
+00002b71  Recive_UART1_Config            
+00002bb7  UART1IntHandler                
+00002ce1  sqrt                           
+00002ce1  sqrtl                          
+00002e51  __aeabi_ddiv                   
+00002f87  GPIOPadConfigSet               
+000030b9  SysCtlClockGet                 
+000031c9  __aeabi_dmul                   
+000032c5  ldexp                          
+000032c5  ldexpl                         
+000032c5  scalbn                         
+000032c5  scalbnl                        
+000033c1  __aeabi_memcpy                 
+000033c1  __aeabi_memcpy4                
+000033c1  __aeabi_memcpy8                
+000033c1  memcpy                         
+0000345d  __aeabi_cdcmpeq                
+0000345d  __aeabi_cdcmple                
+000034e3  __aeabi_cdrcmple               
+00003569  __aeabi_memclr                 
+00003569  __aeabi_memclr4                
+00003569  __aeabi_memclr8                
+0000356b  __aeabi_memset                 
+0000356b  __aeabi_memset4                
+0000356b  __aeabi_memset8                
+00003571  memset                         
+000035e3  __mpu_init                     
+000035e5  __TI_auto_init                 
+00003655  __aeabi_d2f                    
+000036c3  _system_post_cinit             
+000036c5  IntEnable                      
+0000372d  __TI_decompress_lzss           
+00003795  TimerConfigure                 
+000037f5  _c_int00                       
+00003849  C$$EXIT                        
+0000384d  abort                          
+00003855  exit                           
+000038e9  copy_in                        
+00003935  GPIOPinConfigure               
+0000397d  __aeabi_d2iz                   
+000039c5  UARTConfigSetExpClk            
+00003a0b  __aeabi_d2uiz                  
+00003a4f  __aeabi_uidiv                  
+00003a4f  __aeabi_uidivmod               
+00003a91  SysCtlPeripheralReady          
+00003ac9  __aeabi_f2d                    
+00003b01  IntRegister                    
+00003b35  SysCtlPeripheralEnable         
+00003b69  __aeabi_i2d                    
+00003b97  GPIODirModeSet                 
+00003bc1  IntPrioritySet                 
+00003be5  UARTDisable                    
+00003c05  __aeabi_ui2d                   
+00003c25  GPIOPinTypeGPIOOutput          
+00003c3d  TimerIntRegister               
+00003c55  _args_main                     
+00003c6d  TimerControlEvent              
+00003c83  UARTEnable                     
+00003c99  _register_unlock               
+00003c9f  _register_lock                 
+00003ca7  _nop                           
+00003cad  copysign                       
+00003cad  copysignl                      
+00003cc1  GPIOPinTypeGPIOInput           
+00003cd3  GPIOPinTypeTimer               
+00003ce5  GPIOPinTypeUART                
+00003cf9  FPUEnable                      
+00003d09  FPULazyStackingEnable          
+00003d19  IntMasterEnable                
+00003d29  TimerEnable                    
+00003d37  UARTCharGetNonBlocking         
+00003d45  UARTCharsAvail                 
+00003d53  __TI_decompress_none           
+00003d61  CPUcpsie                       
+00003d6d  __TI_zero_init                 
+00003d79  ResetISR                       
+00003d85  TimerIntStatus                 
+00003d8f  TimerValueGet                  
+00003d99  UARTFIFOEnable                 
+00003da3  UARTIntStatus                  
+00003dad  TimerIntEnable                 
+00003db5  UARTIntEnable                  
+00003dbd  GPIOPinRead                    
+00003dc3  GPIOPinWrite                   
+00003dc9  TimerClockSourceSet            
+00003dcf  UARTClockSourceSet             
+00003dd5  UARTFIFOLevelSet               
+00003ddb  TimerIntClear                  
+00003ddf  UARTIntClear                   
+00003de3  _system_pre_init               
+00004118  __TI_Handler_Table_Base        
+00004124  __TI_Handler_Table_Limit       
+00004138  __TI_CINIT_Base                
+00004150  __TI_CINIT_Limit               
+20000000  g_pfnRAMVectors                
+20000270  altitude_ma                    
+200005a0  position_controler             
+20000610  UART1_Rx_Buffers               
+20000644  UART1_Rx_Data                  
+20000678  Source_attitude_payload        
+200006a8  altitude_controler             
+200006d4  int_mavlink_height             
+200006d8  altitude_ewa                   
+20000736  ppm_data                       
+20000754  Source_Rangefinder_payload     
+2000075c  int_pitch                      
+20000760  int_roll                       
+20000764  int_yaw                        
+20000768  mavlink_height                 
+2000076c  pitch                          
+20000770  roll                           
+20000774  yaw                            
+20000778  UART1_Rx_Len                   
+20000779  UART1_Sender_Address           
+2000077a  payload_buf_index              
+2000077b  rx_buffer                      
+2000077c  __stack                        
+2000097c  Rx_Buffer_attitude             
+2000097c  __STACK_END                    
+2000097c  __STACK_TOP                    
+200009a4  Rx_Buffer_height               
+200009b8  bDataReady                     
+200009bc  ui32Distance                   
+200009c0  ultrasonic_height              
+200009c4  int_ultrasonic_height          
+200009c8  ultrasonic_update_flag         
+200009cc  __TI_cleanup_ptr               
+200009d0  __TI_dtors_ptr                 
+200009d4  __TI_enable_exit_profile_output
+200009d8  aircraft_start_flag            
+200009e4  _lock                          
+200009e8  _unlock                        
+200009ec  UART1_Updated_Flag             
+200009fc  newAttiFlag                    
+200009fd  newHeightFlag                  
+200009fe  start_receive_attitude         
+200009ff  start_receive_height           
+20000a14  errno                          
+20000a18  main_func_sp                   
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  binit                          
+UNDEFED   SHT$$INIT_ARRAY$$Base          
+UNDEFED   SHT$$INIT_ARRAY$$Limit         
+
+[198 symbols]
